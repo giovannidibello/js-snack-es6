@@ -4,12 +4,51 @@
 
 // creo un array di oggetti con le squadre di calcio
 
-// aggiungo le proprietà compilando solo il nome
+const squadre = [
+
+    // aggiungo le proprietà compilando solo il nome
+    {"nome": "Real Madrid", "puntiFatti": 0, "falliSubiti":0 },
+    {"nome": "Barcellona", "puntiFatti": 0, "falliSubiti":0 },
+    {"nome": "Atletico Madrid", "puntiFatti": 0, "falliSubiti":0 },
+    {"nome": "Betis", "puntiFatti": 0, "falliSubiti":0 },
+    {"nome": "Getafe", "puntiFatti": 0, "falliSubiti":0 },
+    {"nome": "Siviglia", "puntiFatti": 0, "falliSubiti":0 },
+    {"nome": "Villareal", "puntiFatti": 0, "falliSubiti":0 },
+    {"nome": "Espanyol", "puntiFatti": 0, "falliSubiti":0 },
+    {"nome": "Atletico Bilbao", "puntiFatti": 0, "falliSubiti":0 },
+];
+
+// visualizzo l'array delle squadre
+console.table(squadre);
 
 // creo una funzione che genera un numero random
+function numeroRandom () {
+    return Math.floor(Math.random() * 99) + 1;
+}
 
 // richiamo la funzione per riempire i valori dei punti fatti e falli subiti
+for (let i = 0; i < squadre.length; i++){
 
-// creo un array che prende dal precedente solo nome e falli subiti delle squadre
+    // assegno al valore iesimo di punti fatti un numero generato dalla funzione
+    squadre[i].puntiFatti = numeroRandom();
+
+    // assegno al valore iesimo di falli subiti un numero generato dalla funzione
+    squadre[i].falliSubiti = numeroRandom();
+}
+
+// visualizzo l'array con i valori aggiornati
+console.table(squadre);
+
+// inserisco nel nuovo array nome e falli subiti delle squadre dal precedente solo 
+
+const squadreFalliSubiti = squadre.map(function(squadraCorrente) {
+
+    // ritorna solo queste proprietà
+    return {
+        nome: squadraCorrente.nome,
+        falliSubiti: squadraCorrente.falliSubiti
+    };
+});
 
 // stampo l'array in console
+console.table(squadreFalliSubiti);
