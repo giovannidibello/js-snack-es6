@@ -15,8 +15,8 @@ const bici = [
     { "nome": "Merida Reacto Team", "peso": 7.9 }
 ];
 
-// // stampo l'array in console
-// console.table(bici);
+// stampo l'array in console
+console.table(bici);
 
 // inizializzo la variabile con il primo elemento dell'array
 let biciLeggera = bici[0];
